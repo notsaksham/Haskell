@@ -1,12 +1,11 @@
--- Types and Typeclasses
+{- Types and Typeclasses
 
--- Explicit type declarations
+ Explicit type declarations
+-}
 
-removeNonUpper :: String -> String
-removeNonUpper xs = [x|x<-xs , x `elem` ['a'..'z'] || x ==' ']
-
--- Pattern Matching
--- allows you to write different definiton for different parameteres
+{- Pattern Matching
+allows you to write different definiton for different parameteres
+-}
 
 lucky :: (Integral a) => a -> String
 lucky 7 = "Your input is 7"
@@ -89,4 +88,5 @@ a `myCompare` b
     | a > b = GT
     | a < b = LT
     | otherwise = EQ
+
 
