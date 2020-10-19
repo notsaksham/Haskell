@@ -89,4 +89,21 @@ a `myCompare` b
     | a < b = LT
     | otherwise = EQ
 
+-- Write a function to find BMI with weight and height given and use where instead of manual computation
+whereBmi::(RealFloat a)=>a->a->String
+whereBmi weight height
+    | bmi <= skinny = "You are underweight ma man"
+    | bmi <= normal = "Normie shit"
+    | bmi <= fat = "Gotta lose some weight dude"
+    | otherwise = "Morbid obesity is not a joke, but you are"
+    where bmi = (weight/height) ^ 2
+          skinny = 18.5
+          normal = 25
+          fat = 30
 
+-- Describe list function using where and define a pattern inside itself
+describeList :: [a] -> String
+describeList xs = " The list is " ++ what xs
+                    where what [] = " empty ."
+                          what [x] = "a singleton list ."
+                          what xs = "a longer list ."
