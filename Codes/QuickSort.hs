@@ -17,3 +17,11 @@ quickSort (x:xs) =
     in the ned it will return
     [1]++[2]++[]++[3] ++ [] ++ [4] ++ [5] = [1,2,3,4,5]
 -}
+
+-- Implementing the same function using Filters from chapter 6
+quicksort' :: (Ord a)=>[a] -> [a]
+quicksort' [] = []
+quicksort' (x:xs) = 
+                let smallerSorted = quicksort' (filter (<=x) xs)
+                    biggerSorted = quicksort' (filter (>x) xs)
+                in smallerSorted ++ [x] ++ biggerSorted
