@@ -77,5 +77,6 @@ largestDivisible = head (filter p [10000,9999..])
                     where p x = x `mod` 3892 == 0
 
     
-
+-- takeWhile function - another alternative for the for loop , lmao
+-- its exactly like filter, but stops when it hits the first false statement
 
